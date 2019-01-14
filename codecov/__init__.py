@@ -405,7 +405,7 @@ def main(*argv, **kwargs):
         # --------
         # AppVeyor
         # --------
-        elif os.getenv('CI').lower() == "true" and os.getenv('APPVEYOR').lower() == 'true':
+        elif os.getenv('CI', 'false').lower() == "true" and os.getenv('APPVEYOR', 'false').lower() == 'true':
             # http://www.appveyor.com/docs/environment-variables
             query.update(dict(branch=os.getenv('APPVEYOR_REPO_BRANCH'),
                               service="appveyor",
@@ -483,6 +483,7 @@ def main(*argv, **kwargs):
                               slug=os.getenv('VCS_SLUG', ''),
                               build_url=os.getenv('CI_BUILD_URL', ''),
                               build=os.getenv('CI_BUILD_ID', '')))
+            write('    Failed to detect CI')
 
         # ------
         # git/hg
