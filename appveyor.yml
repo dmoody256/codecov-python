@@ -61,8 +61,6 @@ build: false
 
 test_script:
   - py.test tests/test.py --cov=codecov
-
-after_test:
   - rm -rf tests/coverages
   - if not exist dist mkdir dist
   - if exist .coverage (cp .coverage dist\) else (echo no .coverage)
