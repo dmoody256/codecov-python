@@ -277,7 +277,7 @@ def main(*argv, **kwargs):
         write('XX> Detecting CI provider disabled.')
 
     else:
-        write('==> Detecting CI provider ' + str(os.environ))
+        
         write('==> Detecting CI provider')
         # -------
         # Jenkins
