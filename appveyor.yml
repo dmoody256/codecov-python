@@ -62,7 +62,7 @@ build: false
 test_script:
   - cmd: set
   - sh: printenv
-  - python -c 'import os; print(str(os.environ))'
+  - python -c "import os; print(str(os.environ))"
   - py.test tests/test.py --cov=codecov
 
 after_test:
