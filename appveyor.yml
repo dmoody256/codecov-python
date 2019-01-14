@@ -60,6 +60,8 @@ install:
 build: false
 
 test_script:
+  - cmd: set
+  - sh: printenv
   - py.test tests/test.py --cov=codecov
 
 after_test:
